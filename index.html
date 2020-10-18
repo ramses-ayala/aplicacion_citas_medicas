@@ -20,23 +20,26 @@
         <div class="container">
             <div class="row" >
                 <div class="one-half column">
-                    <div id="caja-formulario" class="form" style="border: 1px solid red">
+                    <div id="caja-formulario" class="form" >
                         <form id="formulario" name="form" >
+
+                            <p class="error" id="error"></p>
+
                             <h1>Formulario</h1>
                             <label>Nombre mascota:</label>
-                            <input class="u-full-width" type="text" name="mascota" placeholder="Nombre mascota" autocomplete="off"/>
+                            <input class="u-full-width" type="text" id="mascota" placeholder="Nombre mascota" autocomplete="off"/>
             
                             <label>Nombre de dueño:</label>
-                            <input class="u-full-width" type="text" name="dueno" placeholder="Nombre dueño" autocomplete="off"/>
+                            <input class="u-full-width" type="text" id="dueno" placeholder="Nombre dueño" autocomplete="off"/>
             
                             <label>Fecha:</label>
-                            <input class="u-full-width" type="date" name="fecha" placeholder="Fecha" />
+                            <input class="u-full-width" type="date" id="fecha" placeholder="Fecha" />
             
                             <label>Hora:</label>
-                            <input class="u-full-width" type="time" name="hora" />
+                            <input class="u-full-width" type="time" id="hora" />
             
                             <label>Sintomas:</label>
-                            <textarea class="u-full-width" name="sintomas" autocomplete="off"></textarea>
+                            <textarea class="u-full-width" id="sintomas" autocomplete="off"></textarea>
             
                             <input class="u-full-width button-primary" type="submit" value="Crear cita" />
             
@@ -45,12 +48,13 @@
                     </div>
                 </div>
 
-                <div class="one-half column" style="border: 1px solid green">
+                <div class="one-half column">
                     <h1>Administra citas</h1>
                 </div>
             </div>
         </div>
     </main>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
