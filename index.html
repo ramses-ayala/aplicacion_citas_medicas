@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Admin pacientes</title>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    
+    <main id="site-main">
+        <h1>Administrador de pacientes Vanilla</h1>
+
+        <div class="container">
+            <div class="row" >
+                <div class="one-half column">
+                    <div id="caja-formulario" class="form" style="border: 1px solid red">
+                        <form id="formulario" name="form" >
+                            <h1>Formulario</h1>
+                            <label>Nombre mascota:</label>
+                            <input class="u-full-width" type="text" name="mascota" placeholder="Nombre mascota" autocomplete="off"/>
+            
+                            <label>Nombre de dueño:</label>
+                            <input class="u-full-width" type="text" name="dueno" placeholder="Nombre dueño" autocomplete="off"/>
+            
+                            <label>Fecha:</label>
+                            <input class="u-full-width" type="date" name="fecha" placeholder="Fecha" />
+            
+                            <label>Hora:</label>
+                            <input class="u-full-width" type="time" name="hora" />
+            
+                            <label>Sintomas:</label>
+                            <textarea class="u-full-width" name="sintomas" autocomplete="off"></textarea>
+            
+                            <input class="u-full-width button-primary" type="submit" value="Crear cita" />
+            
+                        </form>
+                        
+                    </div>
+                </div>
+
+                <div class="one-half column" style="border: 1px solid green">
+                    <h1>Administra citas</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
