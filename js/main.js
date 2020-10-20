@@ -8,6 +8,7 @@
 
     let citas = [];
     
+    let box_cite = document.querySelector('#box-cite');
 
     document.querySelector('#formulario').addEventListener('submit', guardarCita);
 
@@ -32,6 +33,7 @@
             cita = {mascota, dueno, fecha, hora, sintomas};
 
             citas.push(cita);
+            agregarCitasDOM(citas);
 
             console.log("CITAS: ",citas);
 
@@ -47,6 +49,29 @@
 
     }
      
+
+    function agregarCitasDOM(citas){
+
+        box_cite.innerHTML = ``;
+
+        citas.forEach(cita => {
+            box_cite.innerHTML+= renderizarCita(cita);
+        });
+        
+    }
+
+    function renderizarCita(cita){
+
+        return `
+            <div class='cite'>
+                <p>Mascota: <span>${cita.mascota}</span></p>
+                <p>Dueño: <span>${cita.dueno}</span></p>
+                <p>Sintomas: <span>${cita.sintomas}</span></p>
+                <p>Fecha: <span>${cita.fecha}</span></p>
+                <p>Hora: <span>${cita.hora}</span></p>
+            </div>
+        `;
+    }
     
     function uuid4(){
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
