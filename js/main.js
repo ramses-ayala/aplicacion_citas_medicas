@@ -29,8 +29,10 @@
             
             error.style.display = "none";
             error.innerHTML = '';
+            
+            let id = uuid4();
 
-            cita = {mascota, dueno, fecha, hora, sintomas};
+            cita = {id,mascota, dueno, fecha, hora, sintomas};
 
             citas.push(cita);
             agregarCitasDOM(citas);
@@ -64,13 +66,20 @@
 
         return `
             <div class='cite'>
+                <p>ID: <span>${cita.id}</span></p>
                 <p>Mascota: <span>${cita.mascota}</span></p>
                 <p>Dueño: <span>${cita.dueno}</span></p>
                 <p>Sintomas: <span>${cita.sintomas}</span></p>
                 <p>Fecha: <span>${cita.fecha}</span></p>
                 <p>Hora: <span>${cita.hora}</span></p>
+
+                <button class="button u-full-width" onclick="eliminarCita()">Eliminar Cita !!!</button>
             </div>
         `;
+    }
+
+    function eliminarCita(){
+        alert("HOLA");
     }
     
     function uuid4(){
