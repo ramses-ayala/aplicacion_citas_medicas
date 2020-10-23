@@ -1,9 +1,6 @@
 
 (function(){
 
-    
-    
-    
     let cita = {};
 
     let citas = [];
@@ -37,7 +34,7 @@
             citas.push(cita);
             agregarCitasDOM(citas);
 
-            console.log("CITAS: ",citas);
+            //console.log("CITAS: ",citas);
 
         }else{            
             error.style.backgroundColor = "white";
@@ -60,28 +57,43 @@
             box_cite.innerHTML+= renderizarCita(cita);
         });
         
+        // ELIMINAR UNA CITA
+        document.querySelectorAll('.cite a').forEach(item => {
+            item.addEventListener('click', function(event){
+            
+            event.preventDefault();
+    
+            // OBTENER EL ID
+            let id = item.parentElement.getAttribute('id-cita');
+
+            // ITERAR EL ARREGLO Y LOCALIZAR EL ID QUE SE OBTUVO
+            for(let i=0;i<citas.length;i++){
+                if(citas[i].id == id){
+                    // ELIMINAR LA CITA
+                    citas.splice(i,1);
+                }
+            }
+
+            agregarCitasDOM(citas);
+
+            //console.log("CITAS RESTANTES: ", citas);
+            });
+        })        
     }
 
     function renderizarCita(cita){
 
-        return `
-            <div class='cite'>
-                <p>ID: <span>${cita.id}</span></p>
+        return `<div class='cite' id-cita='${cita.id}'> 
                 <p>Mascota: <span>${cita.mascota}</span></p>
                 <p>Dueño: <span>${cita.dueno}</span></p>
                 <p>Sintomas: <span>${cita.sintomas}</span></p>
                 <p>Fecha: <span>${cita.fecha}</span></p>
                 <p>Hora: <span>${cita.hora}</span></p>
 
-                <button class="button u-full-width" onclick="eliminarCita()">Eliminar Cita !!!</button>
-            </div>
-        `;
+                <a class="button u-full-width">Eliminar Cita </a> 
+            </div>`;
     }
 
-    function eliminarCita(){
-        alert("HOLA");
-    }
-    
     function uuid4(){
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
             let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
